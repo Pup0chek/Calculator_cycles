@@ -1,3 +1,5 @@
+import math
+
 
 
 def add(a, b):
@@ -18,3 +20,9 @@ def remainder(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a % b
+
+def sin(a):
+    return math.sin(math.radians(a))
+
+def cos(a):
+    return math.cos(math.radians(a))
