@@ -26,3 +26,6 @@ def sin(a):
 
 def cos(a):
     return math.cos(math.radians(a))
+
+def power(a, b):
+    return a ** b
