@@ -54,7 +54,7 @@ class TestMathOperations(unittest.TestCase):
     def test_square_root(self):
         self.assertEqual(square_root(9), 3)
         self.assertEqual(square_root(0), 0)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(dsa):
             square_root(-1)
 
     # Тесты для округления
