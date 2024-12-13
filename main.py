@@ -13,11 +13,9 @@ class CalculatorApp:
         self.create_widgets()
 
     def create_widgets(self):
-        # Экран для вывода результата
         result_entry = tk.Entry(self.root, textvariable=self.result_var, font=("Arial", 20), bd=10, relief="sunken", justify="right")
         result_entry.grid(row=0, column=0, columnspan=4, sticky="nsew")
 
-        # Кнопки калькулятора
         buttons = [
             ("7", 1, 0), ("8", 1, 1), ("9", 1, 2), ("/", 1, 3),
             ("4", 2, 0), ("5", 2, 1), ("6", 2, 2), ("*", 2, 3),
@@ -28,13 +26,11 @@ class CalculatorApp:
             ("Mem Recall", 7, 0)
         ]
 
-        # Создаем кнопки и добавляем их в интерфейс
         for (text, row, col) in buttons:
             button = tk.Button(self.root, text=text, width=10, height=2, font=("Arial", 14),
                                command=lambda text=text: self.button_click(text))
             button.grid(row=row, column=col, sticky="nsew")
 
-        # Растягиваем кнопки на весь экран
         for i in range(8):
             self.root.grid_rowconfigure(i, weight=1)
         for j in range(4):
@@ -111,7 +107,6 @@ class CalculatorApp:
 
     def evaluate_expression(self, expression):
         try:
-            # Распознаем и заменяем операторы, такие как ^ на **
             expression = expression.replace("^", "**")
             return eval(expression)
         except Exception as e:
