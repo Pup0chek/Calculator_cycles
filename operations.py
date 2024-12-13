@@ -18,8 +18,8 @@ def divide(a, b):
 
 def remainder(a, b):
     if b == 0:
-        raise ValueError("Cannot divide by zero")
-    return a % b
+        raise ValueError("Cannot take remainder with divisor zero")
+    return a - b * math.trunc(a / b)
 
 def sin(a):
     return math.sin(math.radians(a))
